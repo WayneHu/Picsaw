@@ -41,3 +41,5 @@ bin/R.txt
 gen/android/support/v7/appcompat/R.java
 gen/com/example/picsaw/BuildConfig.java
 gen/com/example/picsaw/R.java
+
+appcompat_v7/bin
