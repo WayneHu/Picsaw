@@ -36,10 +36,10 @@ Icon
 .Trashes
 
 *.class
-bin/AndroidManifest.xml
-bin/R.txt
+bin
 gen/android/support/v7/appcompat/R.java
 gen/com/example/picsaw/BuildConfig.java
 gen/com/example/picsaw/R.java
 
 appcompat_v7/bin
+appcompat_v7/.settings
