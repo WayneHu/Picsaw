@@ -1,10 +1,39 @@
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#cccc"
-    android:choiceMode="singleChoice"
-    android:divider="@android:color/transparent"
-    android:dividerHeight="0dp"
-    tools:context="com.example.picsaw.NavigationDrawerFragment" />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#303032"
+    android:orientation="vertical" >
 
+    <include
+        android:id="@+id/navigation_drawer_title"
+        layout="@layout/navigation_drawer_title_logined" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#7f6f6f70" />
+
+    <ListView
+        android:id="@+id/navigation_drawer_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:divider="#7f6f6f70"
+        android:dividerHeight="1dp"
+        tools:context="com.example.picsaw.NavigationDrawerFragment" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#7f6f6f70" />
+
+    <ImageView
+        android:id="@+id/navigation_drawer_camera"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/navigation_drawer_camera" />
+
+</LinearLayout>

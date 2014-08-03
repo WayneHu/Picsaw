@@ -1,25 +1,19 @@
 package com.example.picsaw;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity implements
-        NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the
@@ -38,13 +32,11 @@ public class MainActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.navigation_drawer);
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         // Set up the drawer.
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
     @Override
@@ -59,15 +51,21 @@ public class MainActivity extends ActionBarActivity implements
 
     public void onSectionAttached(int number) {
         switch (number) {
-        case 1:
-            mTitle = getString(R.string.title_section1);
+        case NavigationDrawerFragment.INDEX_NAVIGATION_DRAWER_EXPLORE:
+            mTitle = getString(R.string.navigation_drawer_explore);
             break;
-        case 2:
-            mTitle = getString(R.string.title_section2);
+            
+        case NavigationDrawerFragment.INDEX_NAVIGATION_DRAWER_ACTIVITY:
+            mTitle = getString(R.string.navigation_drawer_activity);
             break;
-        case 3:
-            mTitle = getString(R.string.title_section3);
+            
+        case NavigationDrawerFragment.INDEX_NAVIGATION_DRAWER_SETTINGS:
+            mTitle = getString(R.string.navigation_drawer_settings);
             break;
+            
+        case NavigationDrawerFragment.INDEX_NAVIGATION_DRAWER_ABOUT:
+        	mTitle = getString(R.string.navigation_drawer_about);
+        	break;
         }
     }
 
@@ -130,16 +128,14 @@ public class MainActivity extends ActionBarActivity implements
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container,
-                    false);
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
 
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(getArguments().getInt(
-                    ARG_SECTION_NUMBER));
+            ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
 

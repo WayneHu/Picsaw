@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.picsaw.drawer.DrawerTitle xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="75dp" >
+    
+    <ImageView
+        android:id="@+id/navigation_drawer_titlebar_avater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:src="@drawable/navigation_drawer_default_avatar"
+        android:scaleType="centerInside" />
+    
+    <TextView
+        android:id="@+id/navigation_drawer_titlebar_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/navigation_drawer_titlebar_avater"
+        android:textColor="@android:color/white"
+        android:layout_centerVertical="true"
+        android:text="Afi Li" />
+    
+    <Button
+        android:id="@+id/navigation_drawer_titlebar_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/navigation_drawer_logout" />
+
+</com.example.picsaw.drawer.DrawerTitle>
